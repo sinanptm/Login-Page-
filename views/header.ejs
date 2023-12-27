@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= locals.title ? title:'Login System' %></title>
+    
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <style>
+      .sec {
+        position: relative;
+        height: 680px;
+        overflow: hidden;
+        z-index: 2;
+      }
+
+      body {
+        background: linear-gradient(45deg, #5d5c61, #379683);
+        font-family: "Open Sans", sans-serif;
+        color: #5d5c61; /* Changed the text color */
+      }
+
+      form {
+        text-align: center;
+        height: fit-content;
+        padding: 30px;
+        z-index: 3;
+      }
+
+      .login {
+        height: fit-content;
+        width: 400px;
+        font-size: 16px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        box-shadow: 0 5px 6px #00000036;
+        transform: translate(-50%, -50%);
+        border-radius: 22px;
+        overflow: hidden;
+        transition: 1s;
+        background: linear-gradient(45deg, #7395ae, #557a95);
+      }
+
+      /* Reset top and bottom margins from certain elements */
+      .login-header,
+      .login p {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+
+      .input-container {
+        opacity: 1;
+        transition: 1s;
+      }
+
+      .alter {
+        color: #b1a296;
+      }
+
+      img {
+        width: 80px;
+        border-radius: 50%;
+        padding: 12px;
+        box-shadow: 0 2px 6px #001a348a;
+      }
+
+      .login-header {
+        background: #5d5c61;
+        padding: 20px;
+        font-size: 1.4em;
+        font-weight: normal;
+        text-align: center;
+        text-transform: uppercase;
+        color: #fff;
+        padding-top: 32px;
+      }
+      .lss {
+        color: w
+      }
+
+      .login-container {
+        background: linear-gradient(45deg, #557a95, #7395ae);
+        padding: 40px 30px;
+        transition: 1s;
+      }
+
+      /* Every row inside .login-container is defined with p tags */
+      .login p {
+        padding: 12px;
+      }
+
+      .login input {
+        box-sizing: border-box;
+        display: block;
+        width: 100%;
+        border-width: 0 0 2px; /* Set bottom border only */
+        border-style: solid;
+        padding: 6px;
+        outline: 0;
+        font-family: inherit;
+        font-size: 0.95em;
+        background: none; /* Set background to none */
+      }
+
+      input::placeholder {
+  color: #AABBCC; /* Specify the desired color */
+}
+
+      .login input[type="email"],
+      .login input[type="password"] {
+        border-color: #7395ae; /* Set border color */
+        color: #f3f4f5;
+      }
+
+      /* Text fields' focus effect */
+      .login input[type="email"]:focus,
+      .login input[type="password"]:focus {
+        border-color: #7395ae;
+      }
+
+      .login input[type="button"] {
+        width: 200px;
+        margin: auto;
+        border-bottom: 22px;
+        border: none;
+        color: #AABBCC;
+        overflow: hidden;
+        border-radius: 22px;
+        cursor: pointer;
+        margin-top: 15px;
+      }
+
+      /* Animation */
+      .hide-section {
+        opacity: 0;
+      }
+
+      .hide-form {
+        padding: 0;
+        padding-top: 27px;
+      }
+
+      .hide-login {
+        width: 165px;
+        height: 167px;
+        border-radius: 50%;
+        background-color: #306293;
+      }
+
+      .btn {
+        background-color: #305d7c;
+        border: none;
+        color: #fff;
+        padding: 6px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+      }
+
+      .btn-hover {
+        background-color: #2a3943;
+        transform: scale(1.1);
+      }
+    </style>
+  </head>
+  <body></body>
+</html>

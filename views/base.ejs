@@ -1,0 +1,26 @@
+<%- include('header') %>
+<section class="sec" style=>
+	<div class="login hide-login">
+	   <form class="login-container hide-form" method="POST" action="/login">
+		<img src="https://banner2.cleanpng.com/20180329/zue/kisspng-computer-icons-user-profile-person-5abd85306ff7f7.0592226715223698404586.jpg" alt="Login" />
+		  <div class="input-container hide-section">
+			 <span class="lss"><h2>Login System</h2></span>
+			 <span class="lss">Admin Panel</span>
+			 <% if(locals.logout){ %>
+			   <p class="alter text-center">
+				   <%= logout || "logout successfully" %>
+			   </p>
+			   <% } %>
+			 <p><input type="email" id="email" required  placeholder="Email"  name="email" /></p>
+			 <small class="form-text text-left " style="display: none; color: red;" id="error"></small>
+			 <p><input type="password" placeholder="Password" id="password" required name="password" /></p>
+			 <small class="form-text text-left " style="display: none; color: red;" id="errorpass"></small>
+			 <p>don't have an account<a style="color: rgb(88, 91, 161);" href="/">Sign in</a>
+			 </p>
+			 <button type="submit" class="btn btn-outline-secontar">Log in</button>
+		  </div>
+	   </form>
+	</div>
+</section>
+ <%- include('footer') %>
+ 

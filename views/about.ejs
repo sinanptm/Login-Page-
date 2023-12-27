@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Movies Hub</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(45deg, #5d5c61, #379683);
+        color: #b1a296;
+      }
+
+      header {
+        background: linear-gradient(45deg, #557a95, #7395ae);
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+      }
+
+      nav {
+        position: sticky;
+        background: linear-gradient(45deg, #567c97, #7395ae);
+        color: #fff;
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      nav a {
+        color: #fff;
+        text-decoration: none;
+        padding: 10px;
+        margin: 0 10px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+      }
+
+      nav a:hover {
+        background-color: #5d5c61;
+        transform: scale(1.1);
+      }
+
+      .logout-btn {
+        background-color: #7395ae;
+        border: none;
+        color: #fff;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+      }
+
+      .logout-btn:hover {
+        background-color: #5d5c61;
+        transform: scale(1.1);
+      }
+
+      section {
+        margin: 20px;
+        padding: 20px;
+        background: linear-gradient(45deg, #557a95, #7395ae);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        opacity: 0;
+        animation: fadeIn 1s ease-in-out forwards;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+
+      
+      .container {
+        min-height: 100vh;
+        overflow: auto;
+      }
+
+      .about-content {
+        text-align: justify;
+        color: #fff;
+        line-height: 1.6;
+      }
+
+      .site-name {
+        font-family: "Arial", sans-serif;
+        font-size: 2em;
+        color: #74c2f6;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        text-align: center;
+      }
+
+      .btn-primary {
+        display: inline-block;
+        padding: 8px 16px;
+        background-color: #379683;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 4px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+      }
+
+      .btn-primary:hover {
+        background-color: #557a95;
+        transform: scale(1.1);
+      }
+      a {
+        color: #e8e8ee;
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+      }
+      a:hover {
+        color: #74c2f6;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="site-name">Movies Hub</div>
+      </header>
+
+      <nav class="px-5">
+        <a href="/home">Home</a>
+        <a href="/movies">Movies</a>
+        <a href="/watchlist">Watch List</a>
+        <a href="/about">About</a>
+        <button onclick="logout()" class="logout-btn">Logout</button>
+      </nav>
+
+      <section>
+        <div class="about-content">
+          <h2>About Movies Hub</h2>
+          <p>
+            Welcome to Movies Hub, your go-to place for discovering and enjoying
+            a wide range of movies. Our platform offers a diverse collection of
+            films, from classic masterpieces to the latest blockbusters.
+          </p>
+          <p>
+            At Movies Hub, we are passionate about providing an immersive
+            movie-watching experience. Whether you're a cinephile looking for
+            hidden gems or someone seeking the latest releases, we've got you
+            covered.
+          </p>
+          <p>
+            Explore our carefully curated selection, create your watchlist, and
+            enjoy the magic of cinema from the comfort of your home. Join our
+            community of movie enthusiasts, and let the journey through the
+            world of film begin!
+          </p>
+          <p>
+            Movies Hub is dedicated to bringing you the best in entertainment.
+            Our team of movie enthusiasts works tirelessly to ensure that you
+            have access to a diverse and exciting array of films. From drama to
+            action, comedy to romance, we've got something for everyone.
+          </p>
+          <p>
+            Stay tuned for regular updates, featured playlists, and exclusive
+            content. Dive into the world of Movies Hub and make every movie
+            night a memorable experience. Thank you for being a part of our
+            cinematic journey!
+          </p>
+
+          <h4>Requeted Movies</h4>
+          <% for (let i = 0; i < num; i++) { %>
+          <a href="/home"><%= movies[i].name %><span>.</span></a
+          ><br />
+          <% } %>
+        </div>
+      </section>
+    </div>
+
+    <script>
+      function logout() {
+        window.location.href = "/logout";
+      }
+    </script>
+  </body>
+</html>

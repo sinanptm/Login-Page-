@@ -1,0 +1,92 @@
+<script>
+    const section = document.querySelector(".hide-section");
+    const formContainer = document.querySelector(".login-container");
+    const loginContainer = document.querySelector(".login");
+    const profile = document.querySelector("img");
+    
+    profile.addEventListener("click", () => {
+        // Use classList.toggle to toggle classes instead of remove
+        loginContainer.classList.toggle("hide-login");
+        formContainer.classList.toggle("hide-form");
+    
+        // Use setTimeout to toggle hide-section class after the transition
+        setTimeout(() => {
+            section.classList.toggle("hide-section");
+        }, 1000);
+    });
+    
+    
+    
+            document.addEventListener("DOMContentLoaded", function() {
+                // Get a reference to the email input field
+                var emailInput = document.querySelector('input[id="email"]');
+                var errorParagraph = document.getElementById('error');
+        
+                // Listen for input events on the email input field
+                emailInput.addEventListener("input", function(event) {
+                    var enteredEmail = event.target.value;
+        
+                    // Check if the entered email is not valid (you can replace this with your validation logic)
+                    if (!isValidEmail(enteredEmail)) {
+                        errorParagraph.textContent = "Invalid email address format";
+                        errorParagraph.style.display = "block";
+                
+                        document.getElementById('email').style.border = "1px solid red";
+                    } else {
+                        // Clear the error message if the email is valid
+                        errorParagraph.textContent = "";
+                        errorParagraph.style.display = "none";
+                        emailInput.classList.remove('error-border');
+                        document.getElementById('email').style.border = "";
+                    }
+                });
+        
+                function isValidEmail(email) {
+                    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    return emailRegex.test(email);
+                }
+            });
+             document.addEventListener("DOMContentLoaded", function() {
+            // Get a reference to the password input field
+            var passwordInput = document.querySelector('input[id="password"]');
+            var errorParagraph = document.getElementById('errorpass');
+    
+            // Listen for input events on the password input field
+            passwordInput.addEventListener("input", function(event) {
+                var enteredPassword = event.target.value;
+    
+                // Check if the entered password is not valid (you can replace this with your validation logic)
+                if (!isValidPassword(enteredPassword)) {
+                    errorParagraph.textContent = "Password must be at least 4 character";
+                    errorParagraph.style.display = "block";
+    
+                    document.getElementById('password').style.border = "1px solid red";
+                } else {
+                    // Clear the error message if the password is valid
+                    errorParagraph.textContent = "";
+                    errorParagraph.style.display = "none";
+                    document.getElementById('password').style.border = "";
+                }
+            });
+    
+            // Function to validate password (replace this with your validation logic)
+            function isValidPassword(password) {
+                // This is a basic example, you might want to use a more robust validation
+                return password.length >= 4 && /\S/.test(password);
+            }
+        });
+    
+        const cameraInput = document.getElementById('cameraInput');
+    
+        cameraInput.addEventListener('change', (event) => {
+          const file = event.target.files[0];
+    
+          if (file) {
+            // You can handle the captured file here, for example, display it or upload it to a server
+            console.log('Captured File:', file);
+          }
+        });
+    
+        </script>
+</body>
+</html>
